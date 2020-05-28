@@ -1,0 +1,5 @@
+/c local list = {}
+for _, recipe in pairs(game.player.force.recipes) do
+list[#list+1] = {name=recipe.name,category=recipe.category,energy=recipe.energy,ingredients=recipe.ingredients,products=recipe.products,group=recipe.subgroup.name}
+end
+game.write_file("recipes", game.table_to_json(list))
